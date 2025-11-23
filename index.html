@@ -213,8 +213,8 @@
                 .then(response => response.json())
                 .then(weatherData => {
                     document.getElementById('weatherD').innerHTML = `🌤️ Погода: ${weatherData.weather[0].description}`;
-                    document.getElementById('temp').innerHTML = `🌡️ Температура: ${Math.floor(weatherData.main.temp)}°C`;
-                    document.getElementById('feels_li').innerHTML = `💭 Ощущается как: ${Math.floor(weatherData.main.feels_like)}°C`;
+                    document.getElementById('temp').innerHTML = `🌡️ Температура: ${weatherData.main.temp.toFixed(1)}°C`;
+                    document.getElementById('feels_li').innerHTML = `💭 Ощущается как: ${weatherData.main.feels_like.toFixed(1)}°C`;
                   
                 })
                 .catch(error => {
